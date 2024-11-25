@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python and Pip
-RUN apt-get install -y python3 python3-pip && \
-    ln -s /usr/bin/python3 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip
+# RUN apt-get install -y python3 python3-pip && \
+#     ln -s /usr/bin/python3 /usr/bin/python && \
+#     ln -s /usr/bin/pip3 /usr/bin/pip
 
 # Install libraries
 RUN pip install --no-cache-dir \
@@ -35,6 +35,9 @@ RUN pip install --no-cache-dir \
     requests \
     torch==2.0.1+cpu torchvision==0.15.2+cpu torchaudio==2.0.2+cpu -f https://download.pytorch.org/whl/torch_stable.html \
     tensorflow-cpu==2.13.0
+
+# Update pip
+RUN pip install --upgrade pip
 
 # Copy all files to the container
 COPY . .

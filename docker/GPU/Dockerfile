@@ -36,6 +36,9 @@ RUN pip install --no-cache-dir \
     torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 -f https://download.pytorch.org/whl/torch_stable.html \
     tensorflow==2.13.0
 
+# Update pip
+RUN pip install --upgrade pip
+
 # Copy all files to the container
 COPY . .
 
