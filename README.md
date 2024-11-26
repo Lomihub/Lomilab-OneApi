@@ -18,13 +18,26 @@
 
 #### 📂 Structure
     .
-    ├── docker                 # Dockerfile
-    ├── model                  # AI/ML models
-    ├── app/                   # Flask app
-    ├── docker-compose.yml     # Docker-compose
-    ├── scripts                # Supporting scripts
-    ├── requirements.txt       # Required libraries
-    └── README.md              # README
+    lomilab-oneapi/
+    ├── api/
+    │   ├── v1/                              # API version 1
+    │   │   ├── __init__.py
+    │   │   ├── endpoints/                   # Endpoints for API v1
+    │   │   └── models/                      # Models for API v1
+    ├── app/                                 # Flask/FastAPI application                            
+    ├── tests/                               # Unit tests
+    ├── docker/
+    │   ├── CPU/                             # Docker image for CPU
+    │   ├── gpu/                             # Docker image for GPU                 
+    │   └── docker-compose.yml               # Docker Compose configuration to Containerize the API
+    ├── docs/                                # Documentation
+    ├── scripts/                             # Scripts for deployment
+    ├── static/                              # Static files
+    ├── .env                                 # Environment variables
+    ├── requirements.txt                     # Required libraries if you don't have docker
+    ├── README.md                            # Readme file
+    └── setup.py                             # Setup file
+
 
 #### ✨ Features
 - 🚀  Support for extremely fast model APIs using Flask or FastAPI
